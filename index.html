@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maze Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Rules -->
+
+  <div class="container">
+    <div id="rules-container" class="rules-container">
+      <h2>WELCOME TO <b>MAZE CRAZE!</b></h2>
+      <p>
+        The goal is to reach the end block (highlighted in red) starting from the start block (highlighted in green)
+        within the given number of moves.
+      </p>
+      <p>You can move in four directions: up, down, left, and right, by clicking on the arrow buttons.</p>
+      <p>Avoid the unavailable blocks (highlighted in grey). Remember, you can't go over a block you've already passed
+        and be careful not to get stuck!</p>
+      <p>Good luck!</p>
+      <br>
+      <div class="Begin">
+        <section class="section" id="sectionbutns"></section>
+        <section class="buttons">
+          <div class="btnn">
+            <button class="btn" id="start-game">Start Game</button>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- Game -->
+
+    <div id="game-container" style="display: none;">
+      <!-- Score -->
+      <h1 id="score">Moves: 0/41</h1>
+      <!-- Maze - Game board -->
+      <div id="maze-container" class="maze"></div>
+
+      <!-- Error message -->
+      <div class="error-message"></div>
+
+      <!-- Retry Button -->
+      <div class="button-container">
+        <section class="buttons">
+          <div class="btnn">
+            <button class="btn" id="retry" style="display: none;">Play Again</button>
+          </div>
+        </section>
+      </div>
+
+      <!-- Arrows -->
+      <div class="arrow-container">
+        <button class="arrow-button" data-direction="up">&#129145;</button>
+        <button class="arrow-button" data-direction="down">&#129147;</button>
+        <button class="arrow-button" data-direction="left">&#129144;</button>
+        <button class="arrow-button" data-direction="right">&#129146;</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

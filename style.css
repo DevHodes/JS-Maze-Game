@@ -1,0 +1,268 @@
+/* general comments  */
+
+html {
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: "Inter";
+  scroll-behavior: smooth;
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+  }  */
+
+c* {
+  margin: 5px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: rgb(11, 11, 11);
+  --white: #fff;
+  --yellow: #ffe600;
+  --purple: #9500ec;
+  --hotpink: #ec008e;
+  --padding-grid: 2rem;
+}
+
+/* general container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+/* Rules Container */
+.rules-container {
+  background-color: #fbf6f608;
+  padding-inline: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.rules-container h2 {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.rules-container p {
+  color: var(--white);
+  margin: 10px 0;
+}
+
+/* Maze - Game-board */
+.maze {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  width: 600px;
+  height: 360px;
+  border: 2px solid rgb(0, 0, 0);
+  margin-bottom: 20px;
+  border-spacing: 0;
+}
+
+/* BLOCKS */
+/* Normal block */
+.block {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  background-color: var(--white);
+  border: 1px solid rgb(11, 11, 11);
+  box-sizing: border-box;
+}
+
+/* Current block */
+.block.current {
+  background-color: rgb(251, 255, 0);
+}
+
+/* Starting block */
+.block.start {
+  background-color: #0f0;
+}
+
+/* End block */
+.block.end {
+  background-color: #f00;
+}
+
+/* Visited block */
+.block.visited {
+  background-color: #00b5ec;
+}
+
+/* Unavailable block */
+.block.unavailable {
+  background-color: #808080;
+}
+
+/* Score */
+#score {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: var(--white);
+}
+
+/* Error message */
+.error-message {
+  color: red;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/*  Buttons */
+.Begin {
+  justify-content: center;
+  align-self: center;
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 11em;
+  flex-shrink: 5em;
+  flex-basis: fit-content;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.buttons:hover {
+  transform: scale(1.1);
+}
+
+.btnn>button {
+  margin-top: 10px;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  background-color: var(--hotpink);
+  color: var(--yellow);
+  display: flex;
+  align-self: center;
+  font-size: large;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  display: inline-flex;
+  -webkit-align-items: center;
+  justify-content: center;
+  text-align: center;
+  outline: none;
+  border: none;
+  padding: 8px 40px;
+  border-radius: 20px;
+  height: 47px;
+}
+
+.btn a {
+  color: var(--primary);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--yellow);
+  color: var(--hotpink);
+  text-decoration: none;
+  cursor: pointer;
+  transition: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+/* Retry - Button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* Arrows */
+.arrow-container {
+  flex-wrap: wrap;
+  align-self: center;
+  display: flex;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: center;
+  margin: 10px;
+  padding: 2px;
+  margin-bottom: 10px;
+  padding-inline: 5px;
+}
+
+.arrow-button {
+  width: 60px;
+  height: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+  outline: none;
+  text-decoration: none;
+  border: none;
+  background-color: var(--purple);
+  color: var(--yellow);
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+  display: inline-flex;
+  -webkit-align-items: center;
+  justify-content: center;
+  text-align: center;
+  outline: none;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 2px;
+}
+
+.arrow-button:hover {
+  transform: scale(1.1);
+}
+
+.arrow-button a {
+  color: var(--primary);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.arrow-button:hover {
+  background-color: var(--yellow);
+  color: var(--purple);
+  text-decoration: none;
+  cursor: pointer;
+  transition: ease-in-out;
+  animation-timing-function: ease-in-out;
+}
+
+/* sizing
+@media (max-width: 600px) {
+  body {
+    font-size: 12px;
+  }
+} */
